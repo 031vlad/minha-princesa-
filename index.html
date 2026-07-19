@@ -1,0 +1,34 @@
+DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Meu bemm ❤️</title>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<style>
+body{margin:0;font-family:Arial;background:linear-gradient(135deg,#ff8ec7,#ff5fa2);display:flex;justify-content:center;align-items:center;height:100vh;overflow:hidden;color:#fff}
+.card{background:#fff;color:#333;padding:30px;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.2);text-align:center;position:relative;max-width:360px}
+button{padding:12px 22px;border:none;border-radius:10px;font-size:18px;cursor:pointer;margin:10px}
+#yes{background:#39b86f;color:#fff}#no{background:#ff5b7f;color:#fff;position:absolute}
+</style></head><body>
+<div class="card">
+<h2>💻 Programa iniciado...</h2>
+<p><b>💖 Meu bemm, vamos jogar Roblox hoje?? 🎮</b></p>
+<button id="yes">Boraaa! ❤️</button>
+<button id="no">Depois 😅</button>
+<div id="ok" style="display:none"><h2>🥳 Ebaaa!!</h2><p>Então combinado! Hoje mais tarde a gente joga Roblox juntos! 🎮❤️</p></div>
+</div>
+<script>
+const no=document.getElementById('no');
+no.style.left='190px';no.style.top='135px';
+document.addEventListener('mousemove',e=>{
+ let r=no.getBoundingClientRect();
+ if(Math.abs(e.clientX-r.left)<90&&Math.abs(e.clientY-r.top)<60){
+ no.style.left=Math.random()*(window.innerWidth-120)+'px';
+ no.style.top=Math.random()*(window.innerHeight-60)+'px';
+ }});
+document.getElementById('yes').onclick=()=>{
+ document.querySelector('h2').style.display='none';
+ document.querySelector('p').style.display='none';
+ yes.style.display='none';no.style.display='none';
+ document.getElementById('ok').style.display='block';
+ confetti({particleCount:250,spread:180});
+}
+</script></body></html>
